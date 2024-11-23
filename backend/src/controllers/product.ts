@@ -23,7 +23,8 @@ export const getProductList = (req: Request, res: Response): void => {
 
 export const getProductByID = (req: Request, res: Response): void => {
     const productID = req.params?.id ?? 1;
-    const query = `SELECT * FROM ProductDetails WHERE ProductID = ${productID}`;
+    const query = `SELECT * FROM ProductDetails INNER JOIN Product ON ProductDetails.ProductID = Product.ProductID WHERE ProductDetails.ProductID = ${productID}`
+   
     Connect().then((connection) => {
         Query(connection, query).then((results)=>{
             return res.status(200).json({
