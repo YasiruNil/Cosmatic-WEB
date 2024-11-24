@@ -2,34 +2,34 @@ CREATE SCHEMA IF NOT EXISTS `cosmaticDB`;
 USE cosmaticDB;
 
 CREATE TABLE Category (
- CategoryID INT AUTO_INCREMENT PRIMARY KEY,
- Name VARCHAR(50)
+ categoryID INT AUTO_INCREMENT PRIMARY KEY,
+ category_name VARCHAR(50)
 );
 
 CREATE TABLE Brand (
- BrandID INT AUTO_INCREMENT PRIMARY KEY,
- Name VARCHAR(50)
+ brandID INT AUTO_INCREMENT PRIMARY KEY,
+ brand_name VARCHAR(50)
 );
 
 CREATE TABLE Product (
- ProductID INT AUTO_INCREMENT PRIMARY KEY,
- Name VARCHAR(50),
- Quantity INT,
- Price DECIMAL,
- Image VARCHAR(300),
- BrandID INT,
- CategoryID INT,
- CONSTRAINT FK_BrandID FOREIGN KEY (BrandID) REFERENCES Brand(BrandID),
- CONSTRAINT FK_CategoryID FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID)
+ productID INT AUTO_INCREMENT PRIMARY KEY,
+ product_name VARCHAR(50),
+ quantity INT,
+ price DECIMAL,
+ image VARCHAR(300),
+ brandID INT,
+ categoryID INT,
+ CONSTRAINT FK_BrandID FOREIGN KEY (brandID) REFERENCES Brand(brandID),
+ CONSTRAINT FK_categoryID FOREIGN KEY (categoryID) REFERENCES Category(categoryID)
 );
 
 CREATE TABLE ProductDetails (
- ProductDetailsID INT AUTO_INCREMENT PRIMARY KEY,
- Description VARCHAR(500),
- ExpiryDate DATETIME,
- UsageInstructions varchar(500),
- ProductID INT,
- CONSTRAINT FK_ProductID FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+ productDetailsID INT AUTO_INCREMENT PRIMARY KEY,
+ product_description VARCHAR(500),
+ expiry_date DATETIME,
+ usage_instructions varchar(500),
+ productID INT,
+ CONSTRAINT FK_productID FOREIGN KEY (productID) REFERENCES Product(productID)
 );
 
 INSERT INTO Category VALUES (1,'Perfumes');
