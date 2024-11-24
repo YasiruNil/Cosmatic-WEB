@@ -10,5 +10,11 @@ THIS CONTAIN FRONTEND AND BACKEND BOTH
 
 Pre-setup
   * SQL Query file is provided for initial data, Please run the script. Database details are provided in the .env file.
-  * postman collection also provided.
+  * postman collection is also provided.
+
+
+ALL THE IMAGES ARE HOSTED IN CLOUDINARY.
+TO RUN THE PROJECT --> 
+    FRONTEND, BACKEND USE ---> npm start
+
 
