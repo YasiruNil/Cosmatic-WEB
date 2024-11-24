@@ -4,6 +4,7 @@ interface Products {
   brandID: number;
   quantity: number;
   productID: number;
+  brand_name: string;
   categoryID: number;
   product_name: string;
 }

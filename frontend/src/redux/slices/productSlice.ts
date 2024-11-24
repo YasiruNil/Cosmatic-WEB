@@ -27,7 +27,7 @@ export const fetchSingleProduct = createAsyncThunk(
 
 export const fetchFilteredByBrand = createAsyncThunk(
   "products/fetchFilteredByBrand",
-  async (data: { offset: number; limit: number , id: number}) => {
+  async (data: { offset: number; limit: number; id: number }) => {
     const { offset, limit, id } = data;
     const result = await fetch(
       `http://localhost:4000/product-list-by-brandId/${id}?offset=${offset}&limit=${limit}`
@@ -49,6 +49,7 @@ const productSlice = createSlice({
       .addCase(
         fetchProducts.fulfilled,
         (state: any, action: PayloadAction<any>) => {
+          state.singleProductDetails = [];
           if (action.payload.results.length > 0) {
             state.products = state.products.concat(action.payload.results);
           }

@@ -11,7 +11,7 @@ interface Props {
 const ProductCard = (props: Props): React.JSX.Element => {
     const { product } = props;
   return (
-    <div>
+    <div className="flex justify-center flex-col">
       <CldImage
         width="300"
         height="300"
@@ -21,7 +21,7 @@ const ProductCard = (props: Props): React.JSX.Element => {
         alt="Description of my image"
       />
       <h3 className="text-xl font-semibold mt-4">{product.product_name}</h3>
-      <p className="text-gray-600">{product.price}</p>
+      <p className="text-gray-600">${product.price}</p>
     </div>
   );
 };
